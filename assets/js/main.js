@@ -43,11 +43,12 @@ Strumenti:
 */
 
 //MAIL
+
 //chiedere all'utente la sua mail con un prompt e loggare il risultato
 const mailUser = prompt('Scrivi la tua email');
 console.log(mailUser);
-//selezionare l'elemento nella dom in cui stampare il messaggio
-const result = document.querySelector('.container');
+//selezionare l'elemento in cui stampare il risultato
+const h1Element = document.querySelector('h1');
 
 //BONUS inserire un tag input ed un button per chiedere l'invio della mail
 //BONUS stampare sulla schermata l'esito del controllo
@@ -57,10 +58,9 @@ const mailAccess = [
     'pippo@gmail.com',
     'pluto@gmail.com',
     'paperino@gmail.com'
-]
+];
 
 for (let i = 0; i < mailAccess.length; i++) {
-    const h1Element = document.querySelector('h1');
 
     //controllare se la mail sia nella lista di chi può accedere o meno
     if ((mailUser == mailAccess[0]) || (mailUser == mailAccess[1]) || (mailUser == mailAccess[2])) {     
@@ -78,6 +78,28 @@ for (let i = 0; i < mailAccess.length; i++) {
 
 
 //DADI
-//generare con math.random un numero che va da 1 a 6 per l'utente
-//generare con math.random un numero che va da 1 a 6 per il computer
+
+//selezionare l'elemento in dom nel quale stampare il risultato della sfida
+const h2Element = document.querySelector('h2')
+
+//generare con math.random un numero che va da 1 a 6 per l'utente e loggarlo
+const userDice = Math.floor(Math.random() * 6) + 1;
+console.log(userDice);
+
+//generare con math.random un numero che va da 1 a 6 per il computer e loggarlo
+const computerDice = Math.floor(Math.random() * 6) + 1;
+console.log(computerDice);
+
 //verificare quale dei due numeri è maggiore
+if (userDice > computerDice) {
+    console.log('HAI VINTO');
+    h2Element.innerHTML = 'HAI VINTO';
+    
+} else if (computerDice > userDice) {
+    console.log('HAI PERSO');
+    h2Element.innerHTML = 'HAI PERSO';
+
+} else {
+    console.log('PAREGGIO');
+    h2Element.innerHTML = 'PAREGGIO';
+}
