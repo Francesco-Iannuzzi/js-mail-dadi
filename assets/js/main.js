@@ -44,13 +44,24 @@ Strumenti:
 
 //MAIL
 
+/*
+
+//Metodo 1
 //chiedere all'utente la sua mail con un prompt e loggare il risultato
 const mailUser = prompt('Scrivi la tua email');
 console.log(mailUser);
 //selezionare l'elemento in cui stampare il risultato
 const h1Element = document.querySelector('h1');
 
+*/
+
+//Metodo 2
 //BONUS inserire un tag input ed un button per chiedere l'invio della mail
+
+
+//inserire in tag input e chiedere di inserire la mail
+//loggare il valore del tag input per la verifica della mail
+
 //BONUS stampare sulla schermata l'esito del controllo
 
 //creare una lista di chi può accedere e loggare i vari elementi
@@ -59,22 +70,32 @@ const mailAccess = [
     'pluto@gmail.com',
     'paperino@gmail.com'
 ];
+console.log(mailAccess);
 
-for (let i = 0; i < mailAccess.length; i++) {
 
-    //controllare se la mail sia nella lista di chi può accedere o meno
-    if ((mailUser == mailAccess[0]) || (mailUser == mailAccess[1]) || (mailUser == mailAccess[2])) {     
+const buttonEl = document.querySelector('button');
+const h1Element = document.querySelector('h1');
 
-        //stampare un messaggio che indichi che si può accedere
-        h1Element.innerHTML = 'complimenti sei in lista';
+//creare un addEventListener per inviare la mail
+buttonEl.addEventListener ('click', function(){
+    const mailUser = document.querySelector('input').value
+    console.log(mailUser);
 
-    } else {
+    //creare un ciclo per il controllo della mai
+    for (let i = 0; i < mailAccess.length; i++) {
 
-        //stampare un messaggio che indichi che non si può accedere
-        h1Element.innerHTML = 'mi dispiace non sei in lista';
+        //controllare se la mail sia nella lista di chi può accedere o meno
+        if ((mailUser == mailAccess[0]) || (mailUser == mailAccess[1]) || (mailUser == mailAccess[2])) {     
+    
+            //stampare un messaggio che indichi che si può accedere
+            h1Element.innerHTML = 'complimenti sei in lista';
+    
+        } else {
+    
+            //stampare un messaggio che indichi che non si può accedere
+            h1Element.innerHTML = 'mi dispiace non sei in lista';
+        }
     }
-}
-
 
 
 //DADI
@@ -103,3 +124,6 @@ if (userDice > computerDice) {
     console.log('PAREGGIO');
     h2Element.innerHTML = 'PAREGGIO';
 }
+
+})
+
