@@ -44,12 +44,38 @@ Strumenti:
 
 //MAIL
 //chiedere all'utente la sua mail con un prompt e loggare il risultato
+const mailUser = prompt('Scrivi la tua email');
+console.log(mailUser);
+//selezionare l'elemento nella dom in cui stampare il messaggio
+const result = document.querySelector('.container');
+
 //BONUS inserire un tag input ed un button per chiedere l'invio della mail
 //BONUS stampare sulla schermata l'esito del controllo
+
 //creare una lista di chi può accedere e loggare i vari elementi
-//controllare che la mail sia nella lista di chi può accedere
-//creare un elemento nella dom
-//stampare un messaggio che indichi se si può accedere o se non si può accedere
+const mailAccess = [
+    'pippo@gmail.com',
+    'pluto@gmail.com',
+    'paperino@gmail.com'
+]
+
+for (let i = 0; i < mailAccess.length; i++) {
+    const h1Element = document.querySelector('h1');
+
+    //controllare se la mail sia nella lista di chi può accedere o meno
+    if ((mailUser == mailAccess[0]) || (mailUser == mailAccess[1]) || (mailUser == mailAccess[2])) {     
+
+        //stampare un messaggio che indichi che si può accedere
+        h1Element.innerHTML = 'complimenti sei in lista';
+
+    } else {
+
+        //stampare un messaggio che indichi che non si può accedere
+        h1Element.innerHTML = 'mi dispiace non sei in lista';
+    }
+}
+
+
 
 //DADI
 //generare con math.random un numero che va da 1 a 6 per l'utente
