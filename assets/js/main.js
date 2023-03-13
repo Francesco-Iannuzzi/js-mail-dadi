@@ -85,7 +85,7 @@ buttonEl.addEventListener ('click', function(){
     for (let i = 0; i < mailAccess.length; i++) {
 
         //controllare se la mail sia nella lista di chi può accedere o meno
-        if ((mailUser == mailAccess[0]) || (mailUser == mailAccess[1]) || (mailUser == mailAccess[2])) {     
+        if (mailUser == mailAccess[0],[1],[2]) {     
     
             //stampare un messaggio che indichi che si può accedere
             h1Element.innerHTML = 'complimenti sei in lista';
